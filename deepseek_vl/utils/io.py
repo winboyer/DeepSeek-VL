@@ -23,6 +23,10 @@ from typing import Dict, List
 import PIL.Image
 import torch
 from transformers import AutoModelForCausalLM
+import collections
+import collections.abc
+for type_name in collections.abc.__all__:
+    setattr(collections, type_name, getattr(collections.abc, type_name))
 
 from deepseek_vl.models import MultiModalityCausalLM, VLChatProcessor
 
